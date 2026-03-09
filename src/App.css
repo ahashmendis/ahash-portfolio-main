@@ -1,0 +1,31 @@
+.section-container {
+  width: 100%;
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 18px;
+  padding-right: 18px;
+  box-sizing: border-box;
+}
+.title,
+.para {
+  font-kerning: none;
+  -webkit-text-rendering: optimizeSpeed;
+  text-rendering: optimizeSpeed;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+@media only screen and (max-width: 1600px) {
+  .section-container {
+    max-width: 1200px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .section-container {
+    max-width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
