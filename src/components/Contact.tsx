@@ -59,6 +59,7 @@ const Contact = () => {
             <h5>
               <MdCopyright /> 2026
             </h5>
+            <h5>Built with React, TypeScript, Three.js, GSAP, GLSL, CSS & Vite</h5>
           </div>
         </div>
       </div>
