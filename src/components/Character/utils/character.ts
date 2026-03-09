@@ -3,6 +3,15 @@ import { DRACOLoader, GLTF, GLTFLoader } from "three-stdlib";
 import { setCharTimeline, setAllTimeline } from "../../utils/GsapScroll";
 import { decryptFile } from "./decrypt";
 
+// Eagerly fetch and decrypt the model as soon as this chunk loads
+const preloadedBlobPromise = decryptFile(
+  "/models/character.enc?v=2",
+  "MyCharacter12"
+).catch((err) => {
+  console.error("Preload error", err);
+  return null;
+});
+
 const setCharacter = (
   renderer: THREE.WebGLRenderer,
   scene: THREE.Scene,
@@ -11,15 +20,14 @@ const setCharacter = (
   const loader = new GLTFLoader();
   const dracoLoader = new DRACOLoader();
   dracoLoader.setDecoderPath("/draco/");
+  dracoLoader.preload(); // Pre-init the WASM worker pool eagerly
   loader.setDRACOLoader(dracoLoader);
 
   const loadCharacter = () => {
     return new Promise<GLTF | null>(async (resolve, reject) => {
       try {
-        const encryptedBlob = await decryptFile(
-          "/models/character.enc?v=2",
-          "MyCharacter12"
-        );
+        const encryptedBlob = await preloadedBlobPromise;
+        if (!encryptedBlob) throw new Error("Failed to load character blob");
         const blobUrl = URL.createObjectURL(new Blob([encryptedBlob]));
 
         let character: THREE.Object3D;
