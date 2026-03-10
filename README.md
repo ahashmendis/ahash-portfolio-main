@@ -1,16 +1,129 @@
-# My Portfolio Wesbite - Overview 🚀
+# Ahash Mendis — Personal Ecosystem Portfolio 🌐
 
-This repository contains the open source version of my porfolio website.
-Do check it out!
+Welcome to the source code of my personal portfolio website.
 
-## Instructions 🛠️
+This site showcases my work across **technology, creative media, and digital brand building**. It highlights the ecosystem of projects and brands I am developing.
 
-I have modified the gsap club plugins with the trial plugins, but with the trial plugin you cannot host it🔴. So for Club plugins, Check out here: https://gsap.com/docs/v3/Installation/
+Visit the live site:
 
-**Techstack** - React, TypeScript, GSAP, ThreeJS, WebGL, HTML, Css, JavaScript
+https://ahash.me
 
-![Portfolio-Preview](public/images/preview.png)
+---
 
-## License
+# About This Portfolio
 
-This project is open source and available under the [MIT License](LICENSE).
+This portfolio represents my work as a **digital creator and technology builder**.
+
+It brings together projects across multiple areas including:
+
+• Web development
+• Software and digital tools
+• Video production and editing
+• Drone cinematography
+• Social media growth systems
+
+The website also showcases the ecosystem of brands I am building.
+
+---
+
+# Brands Featured
+
+This portfolio includes projects and work from the following brands:
+
+### Nexscape
+
+Technology startup focused on building innovative digital products and scalable software platforms.
+
+### Growthscape
+
+Digital marketing and social media growth agency helping brands expand their online presence.
+
+### Lenscape Studios
+
+Cinematic video production studio specializing in storytelling-driven visual content.
+
+### Hover by Ahash
+
+Drone cinematography brand capturing aerial visuals for events, landscapes, and real estate.
+
+---
+
+# Technology Stack
+
+This website was built using modern web technologies.
+
+Frontend
+React
+TypeScript
+Next.js
+
+Animation & Visuals
+GSAP
+Three.js
+WebGL
+
+Styling
+TailwindCSS
+CSS
+
+Other Tools
+JavaScript
+HTML
+
+---
+
+# Features
+
+• Interactive animations and motion effects
+• 3D elements and WebGL visuals
+• Video showreel sections
+• Brand ecosystem showcase
+• Responsive modern UI
+• Optimized performance for web deployment
+
+---
+
+# Preview
+
+![Portfolio Preview](public/images/preview.png)
+
+---
+
+# Development
+
+To run the project locally:
+
+```bash
+npm install
+npm run dev
+```
+
+Then open:
+
+http://localhost:3000
+
+---
+
+# License
+
+This project is open source and available under the MIT License.
+
+---
+
+# Connect With Me
+
+Website
+https://ahash.me
+
+LinkedIn
+https://linkedin.com
+
+Instagram
+https://instagram.com/ahash_men
+
+Facebook
+https://facebook.com/ahashmen
+
+---
+
+Built with creativity and technology by **Ahash Mendis**.
