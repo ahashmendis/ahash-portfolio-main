@@ -10,7 +10,11 @@ const Contact = () => {
           <div className="contact-box">
             <h4>WhatsApp</h4>
             <p>
-              <a href="https://wa.me/94701987004" data-cursor="disable">
+              <a 
+                href="https://wa.me/94701987004" 
+                data-cursor="disable"
+                aria-label="Send message via WhatsApp"
+              >
                 Send Message
               </a>
             </p>
@@ -22,32 +26,40 @@ const Contact = () => {
             <a
               href="https://www.linkedin.com/in/ahashmendis"
               target="_blank"
+              rel="noreferrer"
               data-cursor="disable"
               className="contact-social"
+              aria-label="LinkedIn - opens in new tab"
             >
               LinkedIn <MdArrowOutward />
             </a>
             <a
               href="https://www.instagram.com/ahash_men"
               target="_blank"
+              rel="noreferrer"
               data-cursor="disable"
               className="contact-social"
+              aria-label="Instagram - opens in new tab"
             >
               Instagram <MdArrowOutward />
             </a>
             <a
               href="https://facebook.com/ahashmen"
               target="_blank"
+              rel="noreferrer"
               data-cursor="disable"
               className="contact-social"
+              aria-label="Facebook - opens in new tab"
             >
               Facebook <MdArrowOutward />
             </a>
             <a
               href="https://www.youtube.com/@LenscapeStudiosSL"
               target="_blank"
+              rel="noreferrer"
               data-cursor="disable"
               className="contact-social"
+              aria-label="YouTube - opens in new tab"
             >
               YouTube <MdArrowOutward />
             </a>

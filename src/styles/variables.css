@@ -1,0 +1,61 @@
+/* CSS Variables for Breakpoints and Layout */
+:root {
+  /* Breakpoints */
+  --breakpoint-mobile: 480px;
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 1024px;
+  --breakpoint-large: 1200px;
+  --breakpoint-xl: 1600px;
+
+  /* Layout */
+  --max-width-container: 1300px;
+  --max-width-large: 1200px;
+  --padding-mobile: 16px;
+  --padding-tablet: 24px;
+  --padding-desktop: 36px;
+
+  /* Colors */
+  --color-primary: #70f4ff;
+  --color-primary-dark: #00d4e8;
+  --color-bg-dark: #060e22;
+  --color-bg-light: #ffffff;
+  --color-text-dark: #060e22;
+  --color-text-light: #ccc;
+  --color-border: rgba(112, 244, 255, 0.18);
+  --color-overlay: rgba(6, 14, 34, 0.58);
+
+  /* Typography */
+  --font-family-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Transitions */
+  --transition-fast: 150ms ease-in-out;
+  --transition-base: 300ms ease-in-out;
+  --transition-slow: 500ms ease-in-out;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-base: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+
+  /* Z-index */
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+  --z-navbar: 9999;
+}
+
+/* Dark mode overrides */
+.dark-mode {
+  --color-bg-dark: #0a1628;
+  --color-bg-light: #1a2332;
+  --color-text-light: #e0e0e0;
+}

@@ -11,22 +11,91 @@ import {
   RapierRigidBody,
 } from "@react-three/rapier";
 
-const textureLoader = new THREE.TextureLoader();
 const imageUrls = [
-  "/images/react2.webp",
-  "/images/next2.webp",
-  "/images/node2.webp",
-  "/images/express.webp",
-  "/images/mongo.webp",
-  "/images/mysql.webp",
-  "/images/typescript.webp",
-  "/images/javascript.webp",
+  // Web Technologies
+  "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+  "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+  "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+  "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+  "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+  "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+  "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
+  "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg",
+  
+  // Databases
+  "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+  "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+  "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+  "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg",
+  
+  // Programming Languages
+  "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+  "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+  
+  // Design & Video Software
+  "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg",
+  "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Adobe_Lightroom_Classic_icon.svg/512px-Adobe_Lightroom_Classic_icon.svg.png",
+  "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aftereffects/aftereffects-original.svg",
+  "https://www.pngall.com/wp-content/uploads/8/DaVinci-Resolve-Logo-PNG.png",
+  
+  // Tools & Libraries
+  "https://raw.githubusercontent.com/gsap/gsap/master/gsap-logo-dark.svg",
+  "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/threejs/threejs-original.svg",
+  "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+  "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+  "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/blender/blender-original.svg",
 ];
-const textures = imageUrls.map((url) => textureLoader.load(url));
+
+// Create white canvas textures with centered logos
+function createLogoTexture(imageUrl: string): THREE.CanvasTexture {
+  const canvas = document.createElement("canvas");
+  canvas.width = 512;
+  canvas.height = 512;
+  const ctx = canvas.getContext("2d")!;
+  
+  // Fill with white background
+  ctx.fillStyle = "#ffffff";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  
+  // Load and draw the logo
+  const img = new Image();
+  img.crossOrigin = "anonymous";
+  img.onload = () => {
+    const maxSize = 512 * 0.6; // Logo is 60% of canvas
+    let width = img.width;
+    let height = img.height;
+    
+    // Scale to fit
+    if (width > height) {
+      if (width > maxSize) {
+        height = Math.round((height * maxSize) / width);
+        width = Math.round(maxSize);
+      }
+    } else {
+      if (height > maxSize) {
+        width = Math.round((width * maxSize) / height);
+        height = Math.round(maxSize);
+      }
+    }
+    
+    // Center on canvas
+    const x = (canvas.width - width) / 2;
+    const y = (canvas.height - height) / 2;
+    ctx.drawImage(img, x, y, width, height);
+  };
+  img.src = imageUrl;
+  
+  const texture = new THREE.CanvasTexture(canvas);
+  texture.magFilter = THREE.LinearFilter;
+  texture.minFilter = THREE.LinearMipmapLinearFilter;
+  return texture;
+}
+
+const textures = imageUrls.map((url) => createLogoTexture(url));
 
 const sphereGeometry = new THREE.SphereGeometry(1, 28, 28);
 
-const spheres = [...Array(30)].map(() => ({
+const spheres = [...Array(46)].map(() => ({
   scale: [0.7, 1, 0.8, 1, 1][Math.floor(Math.random() * 5)],
 }));
 
@@ -155,13 +224,11 @@ const TechStack = () => {
     return textures.map(
       (texture) =>
         new THREE.MeshPhysicalMaterial({
+          color: "#ffffff",
           map: texture,
-          emissive: "#ffffff",
-          emissiveMap: texture,
-          emissiveIntensity: 0.3,
-          metalness: 0.5,
-          roughness: 1,
-          clearcoat: 0.1,
+          metalness: 0,
+          roughness: 0.8,
+          clearcoat: 0,
         })
     );
   }, []);

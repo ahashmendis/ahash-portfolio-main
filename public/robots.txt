@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Disallow: /private/
+Crawl-delay: 1
+
+Sitemap: https://ahash.me/sitemap.xml
+
+User-agent: AdsBot-Google
+Allow: /
+
+User-agent: Googlebot
+Allow: /

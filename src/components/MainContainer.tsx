@@ -5,8 +5,10 @@ import Contact from "./Contact";
 import Cursor from "./Cursor";
 import Landing from "./Landing";
 import Navbar from "./Navbar";
+import SkipLink from "./SkipLink";
 import WhatIDo from "./WhatIDo";
 import Work from "./Work";
+import ErrorBoundary from "./ErrorBoundary";
 import setSplitText from "./utils/splitText";
 import PortfolioSections from "./PortfolioSections";
 import useScrollReveal from "../hooks/useScrollReveal";
@@ -50,24 +52,39 @@ const MainContainer = ({ children }: PropsWithChildren) => {
 
   return (
     <div className="container-main">
+      <SkipLink />
       <Cursor />
       <Navbar />
       {isDesktopView && children}
       <div id="smooth-wrapper">
         <div id="smooth-content">
-          <div className="container-main">
+          <div className="container-main" id="main-content" role="main">
             <Landing>{!isDesktopView && children}</Landing>
-            <About />
-            <WhatIDo />
-            <Career />
-            <Work />
-            <PortfolioSections />
+            <ErrorBoundary>
+              <About />
+            </ErrorBoundary>
+            <ErrorBoundary>
+              <WhatIDo />
+            </ErrorBoundary>
+            <ErrorBoundary>
+              <Career />
+            </ErrorBoundary>
+            <ErrorBoundary>
+              <Work />
+            </ErrorBoundary>
+            <ErrorBoundary>
+              <PortfolioSections />
+            </ErrorBoundary>
             {isDesktopView && (
-              <Suspense fallback={<div>Loading....</div>}>
-                <TechStack />
-              </Suspense>
+              <ErrorBoundary>
+                <Suspense fallback={<div style={{ minHeight: "400px" }} />}>
+                  <TechStack />
+                </Suspense>
+              </ErrorBoundary>
             )}
-            <Contact />
+            <ErrorBoundary>
+              <Contact />
+            </ErrorBoundary>
           </div>
         </div>
       </div>
