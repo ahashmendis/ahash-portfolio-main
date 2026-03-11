@@ -4,43 +4,43 @@
   <url>
     <loc>https://ahash.me/</loc>
     <lastmod>2026-03-11</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://ahash.me/brands/lenscape</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://ahash.me/brands/hover</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://ahash.me/brands/nexscape</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://ahash.me/brands/growthscape</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://ahash.me/client-reels</loc>
     <lastmod>2026-03-11</lastmod>
-    <changefreq>bi-weekly</changefreq>
-    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://ahash.me/contact</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
 </urlset>

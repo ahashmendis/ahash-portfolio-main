@@ -1,13 +1,14 @@
 {
-  "name": "Ahash Mendis - Portfolio",
-  "short_name": "Ahash",
-  "description": "Digital creator, brand builder, developer, and video producer portfolio",
+  "name": "Ahash Mendis - Creative Technologist & Digital Creator Portfolio",
+  "short_name": "Ahash Mendis",
+  "description": "Portfolio of Ahash Mendis: Digital creator, full-stack developer, video producer, and brand builder specializing in Three.js, React, and innovative digital experiences",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "orientation": "portrait-primary",
   "theme_color": "#060e22",
   "background_color": "#ffffff",
+  "categories": ["business", "portfolio", "technology"],
   "icons": [
     {
       "src": "/favicon.png",
@@ -42,7 +43,6 @@
       "form_factor": "wide"
     }
   ],
-  "categories": ["business", "portfolio"],
   "shortcuts": [
     {
       "name": "View Brands",
